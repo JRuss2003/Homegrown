@@ -9,7 +9,7 @@ void Camera::Init()
 	camY = 128.0f;
 	camZ = 0.0f;
 	angleY = -0.61540309;
-	angle = -0.785398;
+	angle = 0.785398f;
 	camTarget = glm::vec3(camX + cos(angle), camY + tan(angleY), camZ + sin(angle));
 	cameraWidthMin = -(float)(Window::Get()->width / 2) / 4.0f;
 	cameraWidthMax = (float)(Window::Get()->width / 2) / 4.0f;
@@ -41,6 +41,7 @@ void Camera::Update()
 	cameraRight = glm::normalize(glm::cross(camDirection, worldUp));
 	cameraUp = glm::normalize(glm::cross(cameraRight, camDirection));
 	raySource = glm::vec3(camX, camY, camZ) + cameraRight  * glm::vec1(mouseX) + cameraUp * glm::vec1(mouseY);
+	rotationSource = glm::vec3(camX, camY, camZ) + cameraRight + cameraUp;
 	rayDirection = camDirection;
 }
 

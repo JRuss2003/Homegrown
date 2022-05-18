@@ -41,4 +41,16 @@ void EventProcessor::PollEvents()
 		Camera::Get()->cameraHeightMax += (float)(Window::Get()->height / 2.0f) * Clock::Get()->deltaTime / 80.0f;
 		Camera::Get()->cameraHeightMin -= (float)(Window::Get()->height / 2.0f) * Clock::Get()->deltaTime / 80.0f;
 	}
+	if (glfwGetKey(Window::Get()->window, GLFW_KEY_1) == GLFW_PRESS) {
+		Camera::Get()->angle = 0.785398f;
+	}
+	if (glfwGetKey(Window::Get()->window, GLFW_KEY_2) == GLFW_PRESS && Camera::Get()->angle != 2.0f * 0.785398f + 0.785398f) {
+		Camera::Get()->angle = 2.0f * 0.785398f + 0.785398f;
+	}
+	if (glfwGetKey(Window::Get()->window, GLFW_KEY_3) == GLFW_PRESS) {
+		Camera::Get()->angle = 0.785398;
+	}
+	if (glfwGetKey(Window::Get()->window, GLFW_KEY_4) == GLFW_PRESS) {
+		Camera::Get()->angle = 0.785398;
+	}
 }

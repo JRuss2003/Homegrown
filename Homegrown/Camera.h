@@ -25,6 +25,7 @@ public:
 	glm::vec3 cameraRight;
 	glm::vec3 cameraUp;
 	glm::vec3 raySource;
+	glm::vec3 rotationSource;
 	glm::vec3 rayDirection;
 	glm::vec3 camTarget;
 	glm::vec3 rayVector;

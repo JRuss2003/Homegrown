@@ -1,7 +1,6 @@
 #include "Map.h"
 #include "Textures.h"
 #include "ObjectManager.h"
-#include "Game.h"
 #include "Camera.h"
 
 void Map::Init()
@@ -17,7 +16,10 @@ void Map::Init()
 		for (int z = 0; z < MAP_SIZE; z++) {
 			for (int i = 0; i < 36; i++) {
 				vertexData.push_back(tileVertex[i * 3] + float(x) * 2);
-				vertexData.push_back(tileVertex[i * 3 + 1]);
+				if(tileVertex[i * 3 + 1] > 0.0f && z <= 6)
+					vertexData.push_back(tileVertex[i * 3 + 1] - 1.0f);
+				else
+					vertexData.push_back(tileVertex[i * 3 + 1]);
 				vertexData.push_back(tileVertex[i * 3 + 2] + float(z) * 2);
 				uvData.push_back(tileUv[i * 2]);
 				uvData.push_back(tileUv[i * 2 + 1]);

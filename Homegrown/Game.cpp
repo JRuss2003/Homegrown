@@ -15,6 +15,7 @@ Game::Game()
 	Camera::Get()->Init();
 	scene.Create();
 	building.Create(10, 30);
+	building2.Create(12, 30);
 	GameLoop();
 }
 

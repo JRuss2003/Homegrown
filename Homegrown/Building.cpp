@@ -6,5 +6,5 @@ void Building::Create(int x, int z)
 {
 	ObjectManager::Get()->Add(&buildingObject);
 	
-	buildingObject.CreateObject(x, 4, z, &Textures::Get()->Active_Tile, "GameData/Models/tree.obj");
+	buildingObject.CreateObject(x, 1, z, &Textures::Get()->road_tex, "GameData/Models/road_1.obj");
 }

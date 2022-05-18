@@ -2,10 +2,14 @@
 #include <GL/glew.h>
 #include "GameObject.h"
 
+#define GRASS 0
+#define WATER 1
+
 class Tile
 {
 public:
 	int x, y;
+	int ID;
 };
 
 extern GLfloat flatTileVertex[18];

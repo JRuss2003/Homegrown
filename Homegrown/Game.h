@@ -10,4 +10,5 @@ public:
 	void GameLoop();
 	Scene scene;
 	Building building;
+	Building building2;
 };

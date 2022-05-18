@@ -3,7 +3,6 @@
 #include <GL/glew.h>
 #include <vector>
 #include <string>
-#include <gtc/quaternion.hpp>
 #include <gtx/quaternion.hpp>
 class Mesh
 {

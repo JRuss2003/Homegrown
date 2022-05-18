@@ -5,4 +5,5 @@ void Textures::Load()
 {
 	tileset = RenderEngine::Get()->LoadTexture("GameData/Textures/grass.bmp");
 	Active_Tile = RenderEngine::Get()->LoadTexture("GameData/Textures/Active_Tile.bmp");
+	road_tex = RenderEngine::Get()->LoadTexture("GameData/Textures/road.bmp");
 }
