@@ -16,7 +16,7 @@ void Window::Init(int x, int y, int width, int height)
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	//Create window
-	window = glfwCreateWindow(width, height, "Homegrown", glfwGetPrimaryMonitor(), NULL);
+	window = glfwCreateWindow(width, height, "Homegrown", NULL, NULL);
 	glfwMakeContextCurrent(window);
 
 	//Init glew

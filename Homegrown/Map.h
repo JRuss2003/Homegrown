@@ -10,7 +10,8 @@ public:
 	void Init();
 	void Update();
 	Tile tileList[MAP_SIZE][MAP_SIZE];
-	GameObject* activeTileObject;
+	GameObject activeTileObject;
+	GameObject mapObject;
 	Tile* activeTile;
 };
 

@@ -2,7 +2,7 @@
 #include "Window.h"
 #include "RenderEngine.h"
 #include "Clock.h"
-#include <iostream>
+
 void Camera::Init()
 {
 	camX = 0.0f;
@@ -11,10 +11,10 @@ void Camera::Init()
 	angleY = -0.61540309;
 	angle = -0.785398;
 	camTarget = glm::vec3(camX + cos(angle), camY + tan(angleY), camZ + sin(angle));
-	cameraWidthMin = -(float)(Window::Get()->width / 2) / 2.0f;
-	cameraWidthMax = (float)(Window::Get()->width / 2) / 2.0f;
-	cameraHeightMin = -(float)(Window::Get()->height / 2) / 2.0f;
-	cameraHeightMax = (float)(Window::Get()->height / 2) / 2.0f;
+	cameraWidthMin = -(float)(Window::Get()->width / 2) / 4.0f;
+	cameraWidthMax = (float)(Window::Get()->width / 2) / 4.0f;
+	cameraHeightMin = -(float)(Window::Get()->height / 2) / 4.0f;
+	cameraHeightMax = (float)(Window::Get()->height / 2) / 4.0f;
 	projection = glm::orthoRH(cameraWidthMin, cameraWidthMax, cameraHeightMin, cameraHeightMax, -1000.0f, 1000.0f);
 	view = glm::lookAt(glm::vec3(camX, camY, camZ), camTarget, glm::vec3(0.0, 1.0, 0.0));
 	MatrixID = glGetUniformLocation(RenderEngine::Get()->shaderIDs[0], "MVP");
@@ -42,7 +42,5 @@ void Camera::Update()
 	cameraUp = glm::normalize(glm::cross(cameraRight, camDirection));
 	raySource = glm::vec3(camX, camY, camZ) + cameraRight  * glm::vec1(mouseX) + cameraUp * glm::vec1(mouseY);
 	rayDirection = camDirection;
-	std::cout << raySource.x << "/" << raySource.y << "/" << raySource.z << "\n";
-	
 }
 

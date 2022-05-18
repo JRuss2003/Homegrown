@@ -34,13 +34,11 @@ void EventProcessor::PollEvents()
 		Camera::Get()->cameraWidthMin += (float)(Window::Get()->width / 2.0f) * Clock::Get()->deltaTime / 80.0f;
 		Camera::Get()->cameraHeightMax -= (float)(Window::Get()->height / 2.0f) * Clock::Get()->deltaTime / 80.0f;
 		Camera::Get()->cameraHeightMin += (float)(Window::Get()->height / 2.0f) * Clock::Get()->deltaTime / 80.0f;
-		std::cout << (Camera::Get()->cameraWidthMax / Camera::Get()->cameraHeightMax ) << "\n";
 	}
-	if (glfwGetKey(Window::Get()->window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS && Camera::Get()->cameraWidthMax < (float)(Window::Get()->width / 2) / 2.0f) {
+	if (glfwGetKey(Window::Get()->window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS && Camera::Get()->cameraWidthMax < (float)(Window::Get()->width / 4) / 2.0f) {
 		Camera::Get()->cameraWidthMax += (float)(Window::Get()->width / 2.0f) * Clock::Get()->deltaTime / 80.0f;
 		Camera::Get()->cameraWidthMin -= (float)(Window::Get()->width / 2.0f) * Clock::Get()->deltaTime / 80.0f;
 		Camera::Get()->cameraHeightMax += (float)(Window::Get()->height / 2.0f) * Clock::Get()->deltaTime / 80.0f;
 		Camera::Get()->cameraHeightMin -= (float)(Window::Get()->height / 2.0f) * Clock::Get()->deltaTime / 80.0f;
-		std::cout << (Camera::Get()->cameraWidthMax / Camera::Get()->cameraHeightMax) << "\n";
 	}
 }

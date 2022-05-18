@@ -35,10 +35,19 @@
       <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="Tile.cpp">
-      <Filter>Game\Map</Filter>
+      <Filter>Game\Scene\Map</Filter>
     </ClCompile>
     <ClCompile Include="Map.cpp">
-      <Filter>Game\Map</Filter>
+      <Filter>Game\Scene\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildingManager.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Building.cpp">
+      <Filter>Game\GameObjects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -73,10 +82,19 @@
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Tile.h">
-      <Filter>Game\Map</Filter>
+      <Filter>Game\Scene\Map</Filter>
     </ClInclude>
     <ClInclude Include="Map.h">
-      <Filter>Game\Map</Filter>
+      <Filter>Game\Scene\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildingManager.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Building.h">
+      <Filter>Game\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -89,7 +107,10 @@
     <Filter Include="Game\GameObjects">
       <UniqueIdentifier>{442f026a-69bb-4146-893e-c1ed766fa8d0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\Map">
+    <Filter Include="Game\Scene">
+      <UniqueIdentifier>{db7ff44c-7110-4f3a-9f93-08191c144b49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene\Map">
       <UniqueIdentifier>{be6d18a7-09de-43ba-b7f9-3b5c645b140b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>

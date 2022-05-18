@@ -7,15 +7,14 @@
 
 Game::Game()
 {
-	Window::Get()->Init(10, 10, 1920, 1080);
-	glGenVertexArrays(1, &RenderEngine::Get()->VertexArrayID);
+	Window::Get()->Init(10, 10, 1024, 768);
+	RenderEngine::Get()->Init();
 	RenderEngine::Get()->LoadShaders("GameData/shaders/light.vs", "GameData/shaders/light.fs");
 	RenderEngine::Get()->LoadShaders("GameData/shaders/light_source.vs", "GameData/shaders/light_source.fs");
 	Textures::Get()->Load();
 	Camera::Get()->Init();
-	map.Init();
-	
-	glUseProgram(RenderEngine::Get()->shaderIDs[1]);
+	scene.Create();
+	building.Create(10, 30);
 	GameLoop();
 }
 
@@ -25,7 +24,7 @@ void Game::GameLoop()
 		Clock::Get()->Tick();
 		EventProcessor::Get()->PollEvents();
 		Camera::Get()->Update();
-		map.Update();
+		scene.Update();
 		Window::Get()->Clear();
 		ObjectManager::Get()->Update();
 		Window::Get()->Update();

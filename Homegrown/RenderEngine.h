@@ -8,6 +8,7 @@
 class RenderEngine
 {
 public:
+	void Init();
 	void BindTexture(GLuint* targetTexture);
 	void RenderMesh(Mesh* mesh);
 	void LoadWavefront( Mesh* targetMesh, std::string path);

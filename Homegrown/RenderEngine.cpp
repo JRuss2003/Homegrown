@@ -6,6 +6,11 @@
 #include <sstream>
 #include <stdio.h>
 #include "Textures.h"
+void RenderEngine::Init()
+{
+	glGenVertexArrays(1, &RenderEngine::Get()->VertexArrayID);
+}
+
 void RenderEngine::BindTexture(GLuint* targetTexture)
 {
 	glActiveTexture(GL_TEXTURE0 + 0);
@@ -14,7 +19,7 @@ void RenderEngine::BindTexture(GLuint* targetTexture)
 
 void RenderEngine::RenderMesh(Mesh* mesh)
 {
-
+	//Passing parameters to the shader
 	glm::vec3 lightPos = glm::vec3(30, 20, 30);
 	glUniformMatrix4fv(Camera::Get()->MatrixID, 1, GL_FALSE, &mesh->mvp[0][0]);
 	glUniformMatrix4fv(glGetUniformLocation(*mesh->targetShader, "model"), 1, GL_FALSE, &mesh->model[0][0]);
@@ -22,6 +27,7 @@ void RenderEngine::RenderMesh(Mesh* mesh)
 	glUniformMatrix4fv(glGetUniformLocation(*mesh->targetShader, "projection"), 1, GL_FALSE, &Camera::Get()->projection[0][0]);
 	glUniform3fv(glGetUniformLocation(*mesh->targetShader, "lightPos"), 1, &lightPos[0]);
 	glUniformMatrix4fv(glGetUniformLocation(*mesh->targetShader, "cameraEye"), 1, GL_FALSE, &Camera::Get()->view[0][0]);
+	//Do normal render stuff with varrays ,normals, uvs and vertex
 	glBindVertexArray(VertexArrayID);
 	glEnableVertexAttribArray(2);
 	glBindBuffer(GL_ARRAY_BUFFER, mesh->normalbuffer);

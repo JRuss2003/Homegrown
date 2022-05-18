@@ -145,6 +145,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Building.cpp" />
+    <ClCompile Include="BuildingManager.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Clock.cpp" />
     <ClCompile Include="EventProcessor.cpp" />
@@ -155,11 +157,14 @@
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
     <ClCompile Include="RenderEngine.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Textures.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Building.h" />
+    <ClInclude Include="BuildingManager.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Clock.h" />
     <ClInclude Include="EventProcessor.h" />
@@ -169,6 +174,7 @@
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="ObjectManager.h" />
     <ClInclude Include="RenderEngine.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="Textures.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="Window.h" />

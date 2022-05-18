@@ -7,8 +7,8 @@ class ObjectManager
 {
 public:
 	static ObjectManager* Get() { static ObjectManager objectManager; return &objectManager; };
-	std::vector<GameObject> objectQueue;
-	void Add(GameObject targetObject);
+	std::vector<GameObject*> objectQueue;
+	void Add(GameObject* targetObject);
 	void Update();
 };
 

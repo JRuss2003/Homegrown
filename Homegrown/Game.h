@@ -1,11 +1,13 @@
 #pragma once
 #include "ObjectManager.h"
-#include "Map.h"
+#include "Scene.h"
+#include "Building.h"
 
 class Game
 {
 public:
 	Game();
 	void GameLoop();
-	Map map;
+	Scene scene;
+	Building building;
 };
