@@ -31,4 +31,5 @@ public:
 	glm::vec3 rayVector;
 	double mouseX;
 	double mouseY;
+	float xDis, zDis;
 };

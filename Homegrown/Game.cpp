@@ -26,6 +26,7 @@ void Game::GameLoop()
 		EventProcessor::Get()->PollEvents();
 		Camera::Get()->Update();
 		scene.Update();
+		
 		Window::Get()->Clear();
 		ObjectManager::Get()->Update();
 		Window::Get()->Update();

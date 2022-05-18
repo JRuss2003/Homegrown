@@ -41,8 +41,15 @@ void Map::Update()
 {
 	//I love while true and nobody will ever stop me from using it no matter how 'bad' they say it is :)
 	//Cast a ray from the mouse cursor to get set the activeTile.
+	
 	while (true) {
-		Camera::Get()->raySource += Camera::Get()->rayVector / glm::vec1(80.0f);
+		Camera::Get()->raySource += Camera::Get()->rayVector / glm::vec1(800.0f);
+		if (Camera::Get()->raySource.y > 0.0f) {
+			Camera::Get()->rotationSource += Camera::Get()->rayVector / glm::vec1(800.0f);
+			Camera::Get()->xDis += Camera::Get()->rayVector.x / 80.0f;
+			Camera::Get()->zDis += Camera::Get()->rayVector.z / 80.0f;
+		}
+		
 		if (Camera::Get()->raySource.y < 1.0f && Camera::Get()->raySource.y > -1.0f && Camera::Get()->raySource.x > 0.0f && Camera::Get()->raySource.x < (MAP_SIZE - 1) * 2.0f && Camera::Get()->raySource.z > 0.0f && Camera::Get()->raySource.z < (MAP_SIZE - 1) * 2.0f) {
 			activeTileObject.position.x = (int)((Camera::Get()->raySource.x + 1.0f) / 2.0f) * 2;
 			activeTileObject.position.y = (int)(Camera::Get()->raySource.y / 2.0f) * 2;
@@ -51,9 +58,9 @@ void Map::Update()
 			activeTile = &tileList[(int)Camera::Get()->raySource.x][(int)Camera::Get()->raySource.z];
 			break;
 		}
-		else if (Camera::Get()->raySource.y < -1.0f) {
+		else if (Camera::Get()->raySource.y < 0.0f) {
 			break;
 		}
 	}
-
+	
 }
