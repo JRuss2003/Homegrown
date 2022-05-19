@@ -48,9 +48,19 @@ void EventProcessor::PollEvents()
 	if (glfwGetKey(Window::Get()->window, GLFW_KEY_2) == GLFW_PRESS && Camera::Get()->angle != 2.0f * 0.785398f + 0.785398f) {
 		Camera::Get()->angle = 2.0f * 0.785398f + 0.785398f;
 		Camera::Get()->camX = 128.0f * 2 + Camera::Get()->camX;
+		//Camera::Get()->camZ = 128.0f * 2.0f - Camera::Get()->camZ;
 	}
-	if (glfwGetKey(Window::Get()->window, GLFW_KEY_3) == GLFW_PRESS) {
-		Camera::Get()->angle = 0.785398;
+	if (glfwGetKey(Window::Get()->window, GLFW_KEY_3) == GLFW_PRESS && Camera::Get()->angle != 4.0f * 0.785398f + 0.785398f) {
+		
+		if (Camera::Get()->angle == 0.785398f) {
+			Camera::Get()->camX = 128.0f * 2.0f + Camera::Get()->camX;
+		}
+		else {
+			Camera::Get()->camX = 0.0f + Camera::Get()->camX;
+		}
+
+		Camera::Get()->camZ = 128.0f * 2.0f + Camera::Get()->camZ;
+		Camera::Get()->angle = 4.0f * 0.785398f + 0.785398f;
 	}
 	if (glfwGetKey(Window::Get()->window, GLFW_KEY_4) == GLFW_PRESS) {
 		Camera::Get()->angle = 0.785398;
